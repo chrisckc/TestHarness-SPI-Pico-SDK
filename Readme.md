@@ -11,6 +11,8 @@ One of reasons for using Mode1 is that the CS line is held low for the duration 
 
 I also increased the send rate from 1 per second to 10 per second.
 
+In order to properly view the serial output you will need to use a proper terminal emulator, ie. one that supports ANSI control characters. I use iTerm2 on MacOS with a command to launch screen against the usb tty.
+
 ### What it does
 The Master Pico sends a single value to the Slave Pico, in this case i have chosen 0xAA (170 decimal)
 Immediately after this it sends to same 256 byte buffer as used in the original master-slave example.
