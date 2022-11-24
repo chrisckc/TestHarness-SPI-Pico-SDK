@@ -22,6 +22,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //
 // Example of an SPI bus master using the PL022 SPI interface
+// Modified by Chris Claxton
 
 #include <stdio.h>
 #include "pico/stdlib.h"

@@ -22,6 +22,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 //
 // Example of an SPI bus slave using the PL022 SPI interface
+// Modified by Chris Claxton
 
 #include <stdio.h>
 #include <string.h>
