@@ -79,7 +79,10 @@ int main() {
     }
     printf("\e[2J\e[H"); // clear screen and go to home position
 
-    printf("SPI master example using SPI Mode: %d SPI Clock: %d Hz\r\n\r\n", SPI_MODE, SPI_CLOCK);
+    printf("SPI master example using SPI Mode: %d SPI Clock: %d Hz\r\n", SPI_MODE, SPI_CLOCK);
+    printf("rp2040_chip_version: %u \r\n", rp2040_chip_version());
+    printf("rp2040_rom_version: %u \r\n", rp2040_rom_version());
+    printf("get_core_num: %u \r\n\r\n\r\n", get_core_num());
 
     // Enable and connect to GPIOs
     spi_init(SPI_INSTANCE, SPI_CLOCK);
@@ -134,11 +137,11 @@ int main() {
         spi_write_read_blocking(SPI_INSTANCE, out_buf, in_buf, BUF_LEN);  // The code sits waiting here until the expected number of bytes have been received, in this case BUF_LEN
 
         // Write to stdio whatever came in on the MISO line.
-        printf("SPI master says: read page %d from the MISO (RX Pin) line, returnValue value: 0x%02X (%03u) \r\n", i, returnValue, returnValue);
+        printf("SPI master says: read page %u from the MISO (RX Pin) line, returnValue value: 0x%02X (%03u) \r\n", i, returnValue, returnValue);
         printbuf(in_buf, BUF_LEN);
         clearbuf(in_buf, BUF_LEN);
         printf("\e[H"); // move to the home position, at the upper left of the screen
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         // Sleep for sendInterval
         sleep_ms(sendInterval);
