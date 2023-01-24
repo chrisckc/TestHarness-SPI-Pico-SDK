@@ -50,11 +50,11 @@
 
 #define BUF_LEN         0x100 // 256 byte buffer
 uint8_t out_buf[BUF_LEN], in_buf[BUF_LEN];
-uint8_t testData = 0xAA; // 0xAA = 170 decimal is binary 10101010 producing a nice pattern on the scope for testing spi_is_busy and spi_is_readable
+uint8_t testData = 0xAA; // 0xAA = 170 decimal is binary 10101010 producing a nice pattern on the scope for testing
 
 #define DEBUG_SERIAL_OUTPUT_SCROLLING (false) // If not scrolling the terminal position is reset using escape sequences, proper terminal emulator required
 // Setting this to true breaks it, received data is corrupted
-#define CHECK_SPI_STATUS false // Defines if we want to check the status of the SPI bus using
+#define CHECK_SPI_STATUS false // Defines if we want to check the status of the SPI bus using spi_is_busy and spi_is_readable
 
 unsigned int seconds = 0, lastSeconds = 0;
 unsigned int receiveCounter = 0, lastReceiveCount = 0, receiveRate = 0, receiveErrorCount = 0, sendCounter = 0, sendErrorCount = 0;
