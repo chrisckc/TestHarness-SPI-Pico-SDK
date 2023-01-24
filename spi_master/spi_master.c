@@ -48,14 +48,14 @@ void printbuf(uint8_t buf[], size_t len) {
     int i;
     for (i = 0; i < len; ++i) {
         if (i % 16 == 15)
-            printf("%02X\r\n", buf[i]);
+            printf("%02X \r\n", buf[i]);
         else
             printf("%02X ", buf[i]);
     }
 
     // append trailing newline if there isn't one
     if (i % 16) {
-        printf("\r\n");
+        printf("   \r\n");
     }
 }
 
@@ -141,7 +141,7 @@ int main() {
         printbuf(in_buf, BUF_LEN);
         clearbuf(in_buf, BUF_LEN);
         printf("\e[H"); // move to the home position, at the upper left of the screen
-        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         // Sleep for sendInterval
         sleep_ms(sendInterval);
